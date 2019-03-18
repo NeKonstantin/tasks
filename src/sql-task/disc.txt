@@ -1,0 +1,12 @@
+Task is applicable for T1, T2 grades.
+We have 3 tables:
+    1. Employee with fields: employeeId, gradeId, positionId
+    2. Grade with fields: gradeId, costMultiplier
+    3. Position with fields: positionId, costRate
+
+Extract the following data from database:
+    1. Number of all employees (T1)
+    2. Number of employees for each grade (T1)
+    3. All employees with costRate = N (T2)
+    4. Employee/s with maximum payment, where payment = costRate * costMultiplier (T2)
+    5. Employee/s with minimum payment for maximum grade (T2)

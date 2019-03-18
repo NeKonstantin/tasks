@@ -1,0 +1,61 @@
+{
+  "name": "tslib-seed",
+  "version": "1.0.0",
+  "description": "update this",
+  "files": [
+    "src",
+    "build/src",
+    "index.js",
+    "index.js.map",
+    "index.d.ts"
+  ],
+  "main": "index.js",
+  "typings": "index",
+  "scripts": {},
+  "keywords": [],
+  "author": "Vladimir Repin",
+  "license": "MIT",
+  "nyc": {
+    "check-coverage": false,
+    "per-file": false,
+    "include": [
+      "build/src/**/*.js"
+    ],
+    "exclude": [
+      "build/src/**/*.type.js",
+      "build/src/**/index.js",
+      "build/testSrc/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true,
+    "all": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/repinvv/tslib-seed.git"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/jest": "^24.0.11",
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.5.1",
+    "chai": "^4.2.0",
+    "cross-spawn": "^5.1.0",
+    "fs-extra": "^5.0.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "3.0.1",
+    "gulp-tslint": "^8.1.2",
+    "gulp-watch": "^4.3.11",
+    "jest": "^24.5.0",
+    "run-sequence": "^2.2.0",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.8.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "mocha": "^6.0.2"
+  }
+}
