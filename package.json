@@ -11,7 +11,9 @@
   ],
   "main": "index.js",
   "typings": "index",
-  "scripts": {},
+  "scripts": {
+    "test": "mocha"
+  },
   "keywords": [],
   "author": "Vladimir Repin",
   "license": "MIT",
