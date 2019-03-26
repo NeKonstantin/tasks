@@ -1,12 +1,10 @@
 import { DbEntity } from "./dbEntity.type";
-// import { BlEntity } from './blEntity.type';
+import { BlEntity } from "./blEntity.type";
 
-export function createTree(db: DbEntity[]): DbEntity[] {
-  const newMap = [...db.map(e => {
-    let key = e.id;
-    return [key, e];
-  })];
-  const map = new Map(newMap);
+export function createTree(db: DbEntity[]): BlEntity[] {
+  const map: Map<number, DbEntity>  = new Map();
+
+  db.forEach(el => map.set(el.id, el));
 
   for (let item of map.values()) {
     if (!map.has(item.parentId)) {
