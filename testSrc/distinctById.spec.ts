@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { EntityDBI } from "../distinctById/entityDBI.type";
-import { distinctById } from "../distinctById/distinctById";
+import { EntityDBI } from "../src/distinctById/entityDBI.type";
+import { distinctById } from "../src/distinctById/distinctById";
 
 describe("distinctById", function (): void {
   describe("should return array without duplicate", function (): void {

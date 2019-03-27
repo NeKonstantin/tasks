@@ -1,44 +1,42 @@
-import { generateEntity } from "./distinctByIdRandGen";
-import { timeCounter } from "../utilities/timeCount";
+import { EntityDBI } from "./entityDBI.type";
+import { makeId } from "../utilities/randomId";
+import { makeRandomWord } from "../utilities/randomWord";
 import { distinctById } from "./distinctById";
+import { BasicReporter } from "../reporter";
 
-function launch(params: number[]): void {
-    params.forEach(value => {
-        const entities = generator(v);
-        this.startTimer();
-        this.myFunction(entities);
-        this.stopTimer();
-        this.report(); // console.logs
-    });
-}
+class MyReporter extends BasicReporter {
+    public launch(params: number[]): void {
+        params.forEach(value => {
+            const entities = this.generateEntities(value);
+            this.startTimer();
+            distinctById(entities);
+            this.stopTimer();
+            this.report(value);
+            this.reportTime();
+        });
+    }
 
-function startDistinctById(count: number): number {
-    const entities = generateEntity(count);
-    const time = timeCounter(distinctById, entities);
-    return time;
-}
-startDistinctById(12);
+    private generateEntities(count: number): EntityDBI[] {
+        const entities: EntityDBI[] = [];
+        for (let i = 0; i < count; i++) {
+            entities.push({
+                id: makeId(count),
+                content: makeRandomWord()
+            });
+        }
+        return entities;
+    }
 
-class BasicReporter {
-    public timeCounter(func: Function, array: any[]): number {
-        const startTime = new Date().getTime();
-        const result = func(array);
-        const endTime = new Date().getTime();
-        const totalTime = endTime - startTime;
-        console.log(result);
-        return totalTime;
+    private report(value: number): void {
+        console.log(`Function distinctById with ${value} objects`);
     }
 
 }
 
-class distinctByIdReporter extends BasicReporter {
-
-}
-
 const launchParams = [
-    10000,
-    50000,
-    100000
+    1000000,
+    5000000,
+    10000000
 ];
 
 const reporter = new MyReporter();

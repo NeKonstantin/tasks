@@ -11,10 +11,7 @@
   ],
   "main": "index.js",
   "typings": "index",
-  "scripts": {
-    "test": "mocha -r ts-node/register src/test/*.spec.ts",
-    "startDBI": "node src/distinctById/start.ts"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "Vladimir Repin",
   "license": "MIT",
