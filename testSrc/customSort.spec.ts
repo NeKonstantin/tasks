@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import { EntityCS, ECSType } from "../src/customSort/entityCS.type";
 import { customSort } from "../src/customSort/orderByDefinition";
+import { customSort2 } from "../src/customSort/customSort2";
 
 
 describe("customSort", function (): void {
