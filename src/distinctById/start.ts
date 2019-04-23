@@ -1,5 +1,5 @@
 import { EntityDBI } from "./entityDBI.type";
-import { makeId } from "../utilities/randomId";
+import { makeRandNumber as makeRandNumber } from "../utilities/randomId";
 import { makeRandomWord } from "../utilities/randomWord";
 import { distinctById } from "./distinctById";
 import { BasicReporter } from "../reporter";
@@ -20,7 +20,7 @@ class MyReporter extends BasicReporter {
         const entities: EntityDBI[] = [];
         for (let i = 0; i < count; i++) {
             entities.push({
-                id: makeId(count),
+                id: makeRandNumber(count),
                 content: makeRandomWord()
             });
         }
@@ -41,6 +41,6 @@ const launchParams = [
 
 const reporter = new MyReporter();
 reporter.launch(launchParams);
-// to start: node build/src/distinctById/start.js
+
 // npm runDBI
 // npm runDBI --values=[10000,20000]

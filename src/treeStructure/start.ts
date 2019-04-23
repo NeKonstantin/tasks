@@ -1,7 +1,7 @@
 import { BasicReporter } from "../reporter";
 import { createTree } from "./createTree";
 import { DbEntity } from "./dbEntity.type";
-import { makeId } from "../utilities/randomId";
+import { makeRandNumber } from "../utilities/randomId";
 import { makeRandomWord } from "../utilities/randomWord";
 
 class MyReporter extends BasicReporter {
@@ -21,8 +21,8 @@ class MyReporter extends BasicReporter {
         const entities: DbEntity[] = [];
         for (let i = 0; i < count - 1; i++) {
             entities.push({
-                id: makeId(count),
-                parentId: makeId(count),
+                id: makeRandNumber(count),
+                parentId: makeRandNumber(count),
                 content: makeRandomWord(),
             });
         }

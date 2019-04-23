@@ -1,5 +1,5 @@
 import { EntityDBDI } from "./entityDBDI.type";
-import { makeId } from "../utilities/randomId";
+import { makeRandNumber } from "../utilities/randomId";
 import { makeRandomWord } from "../utilities/randomWord";
 import { BasicReporter } from "../reporter";
 import { distinctByDoubleId } from "./distinctByDoubleId";
@@ -20,8 +20,8 @@ class MyReporter extends BasicReporter {
         const entities: EntityDBDI[] = [];
         for (let i = 0; i < count; i++) {
             entities.push({
-                id1: makeId(count),
-                id2: makeId(count),
+                id1: makeRandNumber(count),
+                id2: makeRandNumber(count),
                 content: makeRandomWord()
             });
         }
